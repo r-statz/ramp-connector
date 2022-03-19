@@ -18,19 +18,16 @@ function arrayToCSV(data) {
   return csv.join("\n");
 }
 
-exports.inventoryTransferCheck = async (data) => {
-  console.log(data, "data in model");
+exports.inventoryTransferCheck = async (sku, qty) => {
+  console.log(sku, qty, "data in model");
   let result = [];
-  const total = Object.values(data)[0];
-  const sku = Object.keys(data)[0];
+  const total = qty;
 
   try {
     await sql.connect(`mssql://ramp:rampsys@${ramp_ip}`);
     let locations =
       await sql.query`SELECT WarehouseSku, LocationName, PalletId, Qty from Inventory WHERE WarehouseSku = ${sku};`;
-
     const data = locations.recordset.sort((a, b) => b.Qty - a.Qty);
-
     let count = 0;
     for (let i = 0; i < data.length; i++) {
       const qty = data[i].Qty;
@@ -44,7 +41,6 @@ exports.inventoryTransferCheck = async (data) => {
         }
       }
     }
-    console.log(result, "result")
     return result;
   } catch (e) {
     console.log(
