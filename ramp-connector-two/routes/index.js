@@ -2,14 +2,13 @@ const express = require("express");
 const router = express.Router();
 const endpoints = require("../controllers/index-ctrl");
 
-router.get("/inventory", async function (req, res, next) {
+router.get("/", async function (req, res, next) {
   res.render("index", { title: "Express" });
 });
 
-// router.get("/inventory", async function (req, res, next) {
-//   const result = await endpoints.inventory(req);
-//   res.json({ result });
-// });
+router.get("/inventory", async function (req, res, next) {
+  res.render("inventory");
+});
 
 router.post("/inventory-transfer", async function (req, res, next) {
   if (req.body.qtys.length > 0 && req.body.skus.length > 0) {

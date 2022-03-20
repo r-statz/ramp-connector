@@ -3,60 +3,10 @@
   <head>
     <title></title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
-
-    <script type="text/javascript">
-      function setSkus() {
-        const skus = document.getElementById("skus").value;
-      }
-      function setQtys() {
-        const qtys = document.getElementById("qtys").value;
-      }
-
-      console.log(window.document, "window");
-    </script>
   </head>
   <body>
     <h1></h1>
     <p>Welcome to TACO TOWN TWO</p>
-    <form
-      style="display: flex; flex-direction: row"
-      action="/inventory-transfer"
-      method="post"
-    >
-      <div style="display: flex; flex-direction: column; width: 200px">
-        <div style="display: flex; flex-direction: column; width: 200px">
-          <label>Skus</label>
-          <textarea
-            id="skus"
-            autofocus
-            value="skus"
-            name="skus"
-            style="min-height: 100px"
-          ></textarea>
-        </div>
-        <div
-          style="
-            display: flex;
-            flex-direction: column;
-            width: 200px;
-            margin-top: 10px;
-          "
-        >
-          <label>Qtys</label>
-          <textarea
-            id="qtys"
-            value="qtys"
-            name="qtys"
-            style="min-height: 100px"
-          ></textarea>
-        </div>
-        <button
-          type="submit"
-          style="margin-top: 10px; height: 3rem; width: 6rem"
-        >
-          ENTER
-        </button>
-      </div>
-    </form>
+    <a href="/inventory">Inventory Transfer</a>
   </body>
 </html>

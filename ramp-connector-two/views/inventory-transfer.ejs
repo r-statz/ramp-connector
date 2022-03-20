@@ -5,14 +5,20 @@
     <style>
       th {
         margin: 0rem 1rem;
-        width: 10rem;
+        width: 8rem;
         display: flex;
         justify-content: flex-start;
         font-size: 16px;
       }
       td {
         margin: 1rem 1rem;
-        width: 10rem;
+        width: 8rem;
+      }
+      .sku {
+        width: 12rem;
+      }
+      .qty {
+        width: 3rem;
       }
 
     </style>  
@@ -23,19 +29,19 @@
     <div>
       <table style="width: 70vw">
         <tr style="display: flex; ">
-          <th>WarehouseSku</th>
+          <th class="sku">WarehouseSku</th>
           <th>PalletId</th>
           <th>LocationName</th>
-          <th>Qty</th>
-          <th>QtyToTransfer</th>
+          <th class="qty">Qty</th>
+          <th class="qty">QtyToTransfer</th>
         </tr>
         <% for(var i=0; i < result.length; i++) { %>
         <tr style="display: flex; ">
-          <td><%= result[i].WarehouseSku %></td>
+          <td class="sku"><%= result[i].WarehouseSku %></td>
           <td><%= result[i].LocationName %></td>
           <td><%= result[i].PalletId %></td>
-          <td><%= result[i].Qty %></td>
-          <td><%= result[i].qtyToTransfer %></td>
+          <td class="qty"><%= result[i].Qty %></td>
+          <td class="qty"><%= result[i].qtyToTransfer %></td>
         </tr>
         <% } %>
       </table>

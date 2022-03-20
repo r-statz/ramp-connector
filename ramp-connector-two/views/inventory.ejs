@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script type="text/javascript">
+      function setSkus() {
+        const skus = document.getElementById("skus").value;
+      }
+      function setQtys() {
+        const qtys = document.getElementById("qtys").value;
+      }
+    </script>
+  </head>
+  <body>
+    <h3>Copy and paste list of skus, same story with qtys</h3>
+    <form
+      style="display: flex; flex-direction: row"
+      action="/inventory-transfer"
+      method="post"
+    >
+      <div style="display: flex; flex-direction: column; width: 160px">
+        <div style="display: flex; flex-direction: column; width: 160px">
+          <label>Skus</label>
+          <textarea
+            id="skus"
+            autofocus
+            value="skus"
+            name="skus"
+            style="min-height: 100px"
+          ></textarea>
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            width: 160px;
+            margin-top: 10px;
+          "
+        >
+          <label>Qtys</label>
+          <textarea
+            id="qtys"
+            value="qtys"
+            name="qtys"
+            style="min-height: 100px"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          style="margin-top: 10px; height: 3rem; width: 6rem"
+        >
+          ENTER
+        </button>
+      </div>
+    </form>
+  </body>
+</html>
