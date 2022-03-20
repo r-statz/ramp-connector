@@ -1,46 +1,44 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <title></title>
+    <style>
+      th {
+        margin: 0rem 1rem;
+        width: 10rem;
+        display: flex;
+        justify-content: flex-start;
+        font-size: 16px;
+      }
+      td {
+        margin: 1rem 1rem;
+        width: 10rem;
+      }
+
+    </style>  
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1>Inventory Checker</h1>
-    <label>SKU</label>
-    <input />
-    <label>qty</label>
-    <input />
-    <!-- <div class="report-table">
-      <table>
-        <tr>
-          <th>WarehouseName</th>
-          <th>FacilityName</th>
-          <th>CustomerName</th>
+    <h1>Results</h1>
+    <div>
+      <table style="width: 70vw">
+        <tr style="display: flex; ">
           <th>WarehouseSku</th>
-
           <th>PalletId</th>
-          <th>CaseId</th>
-          <th>UnitId</th>
-          <th>Season(User8)</th>
-          <th>Season(User3)</th>
+          <th>LocationName</th>
+          <th>Qty</th>
+          <th>QtyToTransfer</th>
         </tr>
-
-        <% for (let i = 0; i < result.length; i++) { %>
-        <tr>
-          <td><%= result[i].WarehouseName%></td>
-          <td><%= result[i].FacilityName%></td>
-          <td><%= result[i].CustomerName%></td>
-          <td><%= result[i].WarehouseSku%></td>
-
-          <td><%= result[i].PalletId%></td>
-          <td><%= result[i].CaseId%></td>
-          <td><%= result[i].UnitId%></td>
-          <td><%= result[i].USER8%></td>
-          <td><%= result[i].USER3%></td>
+        <% for(var i=0; i < result.length; i++) { %>
+        <tr style="display: flex; ">
+          <td><%= result[i].WarehouseSku %></td>
+          <td><%= result[i].LocationName %></td>
+          <td><%= result[i].PalletId %></td>
+          <td><%= result[i].Qty %></td>
+          <td><%= result[i].qtyToTransfer %></td>
         </tr>
-
         <% } %>
-      </table> -->
-    <!-- </div> -->
+      </table>
+    </div>
   </body>
-</html> -->
+</html>

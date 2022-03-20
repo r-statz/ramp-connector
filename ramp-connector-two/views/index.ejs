@@ -2,10 +2,70 @@
 <html>
   <head>
     <title></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+   
+    <script type="text/javascript">
+      function func() {
+        console.log("func time");
+        // let skus = document.getElementById("skus").value;
+        // let qtys = document.getElementById("qtys").value;
+        // qtys = qtys.trim();
+        // qtys = qtys.split(/\s+/);
+        // skus = skus.trim();
+        // skus = skus.split(/\s+/);
+        // let skus = '132G-BLK-1X 13376W-035-3X 13612M-393-L 13612M-393-S 13612M-393-XL 13612M-BLK-L 13612M-BLK-XL';
+        // let qtys = "3 1 9 3 3 9 7";
+        // window.document.skus = skus;
+        // window.document.qtys = qtys;
+      }
+
+      function setSkus() {
+        const skus = document.getElementById("skus").value;
+      }
+      function setQtys() {
+        const qtys = document.getElementById("qtys").value;
+      }
+
+      console.log(window.document, "window");
+    </script>
   </head>
   <body>
     <h1></h1>
     <p>Welcome to TACO TOWN TWO</p>
+    <form
+      style="display: flex; flex-direction: row"
+      action="/inventory-transfer"
+      method="post"
+    >
+      <div style="display: flex; flex-direction: column; width: 200px">
+        <label>Skus</label>
+        <textarea
+          id="skus"
+          autofocus
+          value="skus"
+          name="skus"
+          style="min-height: 100px"
+        ></textarea>
+      </div>
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          width: 200px;
+          margin-left: 10px;
+        "
+      >
+        <label>Qtys</label>
+        <textarea
+          id="qtys"
+          value="qtys"
+          name="qtys"
+          style="min-height: 100px"
+        ></textarea>
+      </div>
+      <button type="submit" style="margin-top: 10px">
+        ENTER
+      </button>
+    </form>
   </body>
 </html>
